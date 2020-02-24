@@ -28,7 +28,6 @@ $(document).ready(function(){
                 setTimeout(function(){
                     $(".error").show();
                 },1000);
-
             }
         });
     });

@@ -1,5 +1,5 @@
 <?php 
-require_once 'php/init.php';
+require_once '../php/init.php';
     if(!isset($_SESSION['user'])){
         header("Location: login.php");
     }
@@ -10,9 +10,9 @@ require_once 'php/init.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/dumbell.png">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/dumbell.png">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/animate.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -26,7 +26,7 @@ require_once 'php/init.php';
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
 <div class="container">
-  <a href="home.php" class="navbar-brand"><img src="img/logo2.png">Build Your Body</a>
+  <a href="../home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -68,6 +68,36 @@ require_once 'php/init.php';
 </div>
 </div>
 </div>
+<section class="content">
+    <div class="container">
+        <div class="row">
+         <div class="col-lg-12 changepw">
+             <h2 class="px-0">Jelszóváltoztatás</h2>
+             <form method="POST" action="changepassword.php">
+                 <div class="row form-group px-4">
+                     <label for="password" class="col-xs-12 col-sm-3 control-label px-0">Jelszó</label>
+                     <div class="col-xs-12 col-sm-9 px-0">
+                            <input type="password" class="form-control" placeholder="Jelszó" name="password" id="password">
+                            <div class="help-box px-0">A jelszó minimum 8 karakter hosszú, kis- és nagybetűket, valamint számot tartalmazzon.</div>
+                     </div>
+                 </div>
+                 <div class="row form-group px-4">
+                     <label for="confirm-password" class="col-xs-12 col-sm-3 control-label px-0">Jelszó újra</label>
+                     <div class="col-xs-12 col-sm-9 px-0">
+                         <input type="password" name="password_confirmation" placeholder="Jelszó újra" class="form-control">
+                     </div>
+                 </div>
+                 <div class="row text-right">
+                     <div class="col">
+                         <button class="btn savenewpw" type="submit">Mentés</button>
+                     </div>
+                 </div>
+             </form>
+         </div>
+        </div>
+    </div>
+
+</section>
 
 
  <footer class="page-footer">
