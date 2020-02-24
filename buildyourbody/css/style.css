@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Navbar */
+.navbar{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background: rgba(0,0,0,.6)!important;
+}
+.navbar-nav li{
+    padding-right: .7rem;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: white;
+    padding-top: .8rem;
+    transition: .3s ease-in-out;
+}
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #00A6FF !important;
+    
+}
+.navbar-brand img{
+    height: 2rem;
+    padding-right: .4rem;
+}
+.carousel-item{
+    height: 100vh;
+    
+}
+.carousel-caption{
+    padding-bottom: 25% !important;
+}
+.carousel-caption h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #00A6FF;
+}
+.carousel-caption h6{
+    font-size: 25px;
+    text-transform: uppercase;
+}
+.tartalom-app{
+    background-color: whitesmoke;
+    padding-top: 5rem;
+}
+#tartalom-text{
+    text-align: justify;
+}
+.section-heading{
+    padding-bottom: 5rem;
+}
+.section-heading h2{
+    font-size: 36px;
+    font-weight: 600;
+}
+.section-heading h6{
+    text-transform: uppercase;
+    color: #00A6FF;
+}
+.man img{
+    position: relative;
+    bottom: 10rem;
+    right: 3rem;
+}
+@media screen and (max-width: 992px) {
+    .man img{
+        bottom: 0;
+        height: 50%;
+        width: 50%;
+    }
+    .navbar-nav.ml-auto{
+        text-align: center;
+    }
+    .single-offer{
+        margin-bottom: 30px;
+    }
+    .bmi
+    .form-control{
+        margin: 10px;
+    }
+}
+.reg{
+    padding-top: 2.5em;
+}
+.page-footer{
+    background: #0057BA ;
+}
+.btn.btn-social-icon{
+    width: 35px;
+    height: 35px;
+    padding: 0;
+}
+.btn-facebook{
+    background: #3b579d;
+    color: #fff;
+}
+.btn-facebook:hover,
+.btn-facebook:focus {
+    background: #2d4278;
+    color: #ffffff
+}
+.btn-instagram:hover,
+.btn-instagram:focus {
+    background: #bf3322;
+    color: #ffffff
+}
+.btn-github:hover,
+.btn-github:focus{
+    background: #707070;
+    color: #ffffff;
+}
+.btn-instagram{
+    background: #dc4a38;
+    color: #ffffff
+}
+.btn-github{
+    background: #808080;;
+    color: #ffffff;
+}
+.single-offer{
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 20px 60px 0px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+.single-offer h4{
+    padding: 30px 0 20px 0;
+}
+.pb-70{
+    padding-bottom: 70px;
+}
+.kiegeszito{
+    padding: 120px 0;
+}
+.kiegeszito h1{
+    font-weight: 500;
+}
+.join{
+    background-image: url("../img/photo.jpg");
+    text-align: center;
+    padding-top: 110px;
+    padding-bottom: 120px;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+}
+.join h1{
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 2px;;
+    margin-bottom: 20px;
+}
+.bmi{
+    background: linear-gradient(to left, #00A6FF, #0057BA);
+    padding-top: 110px;
+    padding-bottom: 120px;
+    color: #fff;
+}
+.bmi h1{
+    font-weight: 500;
+    font-family: Century Gothic;
+}
+.bmi .form-control{
+    color: #fff !important;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 0;
+    background: transparent;
+    border-color: rgb(255, 117, 5);
+}
+.bmi .form-control:focus{
+    background: transparent;
+    border-color: rgb(255, 117, 5);
+}
+.bmi .form-control::placeholder{
+    color: white !important;
+}
+.bmi .primary-btn{
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 2px solid rgb(255, 117, 5);
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 42px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: .3s ease-in-out;
+}
+.bmi
+.primary-btn:hover{
+    background: rgb(255, 117, 5);
+    text-decoration: none;
+    
+}
