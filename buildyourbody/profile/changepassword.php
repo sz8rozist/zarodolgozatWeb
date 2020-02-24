@@ -1,7 +1,7 @@
 <?php 
 require_once '../php/init.php';
     if(!isset($_SESSION['user'])){
-        header("Location: login.php");
+        header("Location: ../login.php");
     }
 
 ?>
