@@ -3,6 +3,25 @@ require_once '../php/init.php';
     if(!isset($_SESSION['user'])){
         header("Location: ../login.php");
     }
+if($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['newpw']) && !empty($_POST['newpwconfirm'])){
+        $ujJelszo = $_POST['newpw'];
+        $ujJelszoConfirm = $_POST['newpwconfirm'];
+        if($ujJelszo === $ujJelszoConfirm){
+            $sql = "UPDATE felhasznalok SET jelszo = ? WHERE f_id = ? ";
+            $statement = $con -> prepare($sql);
+            $statement -> bind_param("si",$ujJelszo,$_SESSION['uid']);
+            if($statement -> execute()){
+                echo "Sikeres jelszó váltás!";
+            }else{
+                echo "Sikertelen jelszó váltás!";
+            }
+            $statement -> close();
+        }else{
+            echo "A két jelszó nem egyezik!";
+        }
+        
+    }
+    $con -> close();
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +37,8 @@ require_once '../php/init.php';
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/main.js"></script>
     <title>Build Your Body - Home</title>
 </head>
 <body>
@@ -62,7 +82,7 @@ require_once '../php/init.php';
         <a href="profile/changepassword.php"><i class="fa fa-cog"></i>Jelszó csere</a>
         </div>
     <div class="logout">
-    <a href="logout.php"><i class="fa fa-sign-out"></i>Kijelentkezés</a>
+    <a href="../logout.php"><i class="fa fa-sign-out"></i>Kijelentkezés</a>
     </div>
     </div>
 </div>
@@ -77,14 +97,15 @@ require_once '../php/init.php';
                  <div class="row form-group px-4">
                      <label for="password" class="col-xs-12 col-sm-3 control-label px-0">Jelszó</label>
                      <div class="col-xs-12 col-sm-9 px-0">
-                            <input type="password" class="form-control" placeholder="Jelszó" name="password" id="password">
+                            <input type="password" class="form-control pw" placeholder="Jelszó" name="password" id="password">
                             <div class="help-box px-0">A jelszó minimum 8 karakter hosszú, kis- és nagybetűket, valamint számot tartalmazzon.</div>
                      </div>
                  </div>
                  <div class="row form-group px-4">
                      <label for="confirm-password" class="col-xs-12 col-sm-3 control-label px-0">Jelszó újra</label>
                      <div class="col-xs-12 col-sm-9 px-0">
-                         <input type="password" name="password_confirmation" placeholder="Jelszó újra" class="form-control">
+                         <input type="password" name="password_confirmation" placeholder="Jelszó újra" class="form-control pw-confirm">
+                         <div class="message"></div>
                      </div>
                  </div>
                  <div class="row text-right">

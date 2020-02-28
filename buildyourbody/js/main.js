@@ -6,8 +6,8 @@ $(document).ready(function(){
         e.preventDefault();
         let user = $(".username").val();
         let pw = $(".password").val();
-        console.log(user);
-        console.log(pw);
+        //console.log(user);
+        //console.log(pw);
         $.ajax({
             method: 'POST',
             url: 'login.php',
@@ -32,4 +32,22 @@ $(document).ready(function(){
         });
     });
     //Login
+    //Change password
+    $(document).on('click','.savenewpw',function(e){
+        e.preventDefault();
+        let newpw = $(".pw").val();
+        let newpwconfirm = $(".pw-confirm").val();
+        $.ajax({
+            method: 'POST',
+            url: 'changepassword.php',
+            data: {newpw:newpw, newpwconfirm: newpwconfirm},
+            success: function(data){
+              
+            },
+            error: function(){
+               
+            }
+        });
+    });
+    //Change password
 });
