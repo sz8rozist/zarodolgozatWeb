@@ -101,6 +101,10 @@ input:not([type=submit]){
 .savenewpw:hover{
     background: #0057BA;
 }
-.active{
-    background-color: goldenrod;
+.message{
+    padding-right: 1rem;
+    font-size: 18px;
+    font-family: Century Gothic;
+    font-weight: 500;
+    color: red;
 }

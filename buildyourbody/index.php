@@ -215,10 +215,9 @@
 
 </footer>
 <!-- Footer -->
-
-<script>
-
-
-</script>
+<div class="scrolltop  btn-info">
+                <span><a href=""><i class="fa fa-arrow-up arrow"></i></a></span>
+        </div>
+<script src="js/main.js"></script>
 </body>
 </html>

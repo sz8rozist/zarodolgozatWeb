@@ -1,12 +1,10 @@
-<?php 
+<?php
 require_once '../php/init.php';
     if(!isset($_SESSION['user'])){
         header("Location: ../login.php");
     }
-if($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['newpw']) && !empty($_POST['newpwconfirm'])){
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['newpw'])){
         $ujJelszo = $_POST['newpw'];
-        $ujJelszoConfirm = $_POST['newpwconfirm'];
-        if($ujJelszo === $ujJelszoConfirm){
             $sql = "UPDATE felhasznalok SET jelszo = ? WHERE f_id = ? ";
             $statement = $con -> prepare($sql);
             $statement -> bind_param("si",$ujJelszo,$_SESSION['uid']);
@@ -16,10 +14,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['newpw']) && !empty($_P
                 echo "Sikertelen jelszó váltás!";
             }
             $statement -> close();
-        }else{
-            echo "A két jelszó nem egyezik!";
-        }
-        
     }
     $con -> close();
 
@@ -46,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['newpw']) && !empty($_P
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
 <div class="container">
-  <a href="../home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
+  <a href="home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -75,11 +69,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['newpw']) && !empty($_P
         <div class="user">
         <span>Üdvözlöm <?php echo $_SESSION['user']; ?></span>
         </div>
-        
+
     </div>
     <div class="col-12 col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
     <div class="changepw">
-        <a href="profile/changepassword.php"><i class="fa fa-cog"></i>Jelszó csere</a>
+        <a href="changepassword.php"><i class="fa fa-cog"></i>Jelszó csere</a>
         </div>
     <div class="logout">
     <a href="../logout.php"><i class="fa fa-sign-out"></i>Kijelentkezés</a>
@@ -105,12 +99,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['newpw']) && !empty($_P
                      <label for="confirm-password" class="col-xs-12 col-sm-3 control-label px-0">Jelszó újra</label>
                      <div class="col-xs-12 col-sm-9 px-0">
                          <input type="password" name="password_confirmation" placeholder="Jelszó újra" class="form-control pw-confirm">
-                         <div class="message"></div>
+
                      </div>
                  </div>
                  <div class="row text-right">
                      <div class="col">
+                     <span class="message"></span>
                          <button class="btn savenewpw" type="submit">Mentés</button>
+
                      </div>
                  </div>
              </form>

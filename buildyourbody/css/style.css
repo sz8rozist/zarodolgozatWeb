@@ -203,3 +203,22 @@ html, body{
     text-decoration: none;
     
 }
+.scrolltop{
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    display: none;
+    font-size: 25px;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  .arrow{
+      color: white;
+  }
+  .arrow:hover{
+      font-weight: bold;
+  }
