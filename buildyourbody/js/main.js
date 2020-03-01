@@ -19,18 +19,13 @@ $(document).ready(function(){
                 setTimeout(function(){
                     $(".success").show();
                 },1000);
-                setTimeout(function(){window.location = "profile/home.php"} , 2000); 
+                setTimeout(function(){window.location = "home.php"} , 2000); 
             },
             error: function(){
                 $(".success").hide();
                 $(".login").show();
                 $(".error").html('<i class="fa fa-warning"></i>Hiba a bejelentkezés során');
-                setTimeout(function(){
-                    $(".error").show();
-                    setTimeout(function(){
-                        location.reload();
-                    },1200);
-                },1000);
+                $(".error").show();
 
             }
         });

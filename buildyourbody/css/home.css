@@ -108,3 +108,10 @@ input:not([type=submit]){
     font-weight: 500;
     color: red;
 }
+.profile{
+    padding-top: 1rem;
+}
+.profile h2{
+    font-size: 1.4rem;
+    margin: 1.8rem 0 3rem .5rem;
+}

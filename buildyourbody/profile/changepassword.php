@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['newpw'])){
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Adatok</a>
+        <a class="nav-link" href="profile.php">Adatok</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Táplálkozás</a>
@@ -76,7 +76,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['newpw'])){
         <a href="changepassword.php"><i class="fa fa-cog"></i>Jelszó csere</a>
         </div>
     <div class="logout">
-    <a href="../logout.php"><i class="fa fa-sign-out"></i>Kijelentkezés</a>
+    <a href="logout.php"><i class="fa fa-sign-out"></i>Kijelentkezés</a>
     </div>
     </div>
 </div>

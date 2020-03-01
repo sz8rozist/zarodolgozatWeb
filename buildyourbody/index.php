@@ -31,7 +31,7 @@
         <a class="nav-link active" href="index.php">Kezdőlap</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.php">Belépés</a>
+        <a class="nav-link" href="profile/login.php">Belépés</a>
       </li>
     
       <li class="nav-item">
