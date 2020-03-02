@@ -4,7 +4,7 @@
 }
 body{
     font-family: "Roboto" !important;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%,
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%,
     #00A6FF), url('../img/transback.jpg');
     background-size: cover;
     background-position: center;

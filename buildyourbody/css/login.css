@@ -1,5 +1,6 @@
 body{
-    background: url('../img/background.jpg');
+    background:linear-gradient(to left, rgba(255, 255, 255, 0) 10%,
+    #00A6FF);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -21,8 +22,8 @@ form{
     top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    border-bottom: 2px solid green;
-    border-top: 3px solid green;
+    border-bottom: 2px solid #00A6FF;
+    border-top: 3px solid #00A6FF;
     box-shadow: 10px 10px 5px black;
 }
 .box input[type="text"],
@@ -74,7 +75,7 @@ form{
 .box input[type="text"]:focus,
 .box input[type="password"]:focus{
     width: 320px;
-    border: 2px solid #8B78E6;
+    border: 2px solid deepskyblue;
     box-shadow: none;
     display: block;
     outline: none;
@@ -84,7 +85,7 @@ form{
     margin: 20px auto;
     display: block;
     text-align: center;
-    border: 2px solid #F4c724;
+    border: 2px solid #00A6FF;
     transition: 0.50s;
     transition-timing-function: ease-in-out;
     border-radius: 24px;
