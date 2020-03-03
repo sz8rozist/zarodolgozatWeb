@@ -19,7 +19,7 @@
 
 <!-- Nav -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
+    <div class="container-fluid">
   <span class="navbar-brand" href="#"><img src="img/logo2.png">Build Your Body</span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -31,11 +31,11 @@
         <a class="nav-link active" href="index.php">Kezdőlap</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="profile/login.php">Belépés</a>
+        <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModalCenter" >Belépés</a>
       </li>
     
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link"  href="#">Link</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -43,10 +43,51 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
+      
+
+
+
+      </ul>
   </div>
   </div>
 </nav>
 <!-- Nav -->
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Bejelentkezés</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" class="login-form">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <img src="img/key.png" alt="" class="src">
+                <div class="form-group inputWithIcon">
+                  <input type="text" name="" id="" placeholder = "Felhasználónév" class="form-control">
+                  <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                </div>
+                <div class="form-group inputWithIcon">
+                  <input type="password" name="" placeholder="Jelszó" id="" class="form-control">
+                  <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg">Bejelentkezés</button>
+</div>
+    </div>
+  </div>
+</div>
+
 <!-- slider -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="6000">
   <ol class="carousel-indicators">

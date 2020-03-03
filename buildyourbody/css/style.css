@@ -207,8 +207,8 @@ html, body{
     position: fixed;
     bottom: 30px;
     right: 15px;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     line-height: 60px;
     text-align: center;
     display: none;
@@ -222,3 +222,58 @@ html, body{
   .arrow:hover{
       font-weight: bold;
   }
+  
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+  
+  input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #00A6FF;
+    box-shadow: 0 0 8px 0 #00A6FF;
+  }
+  
+  .inputWithIcon input[type="text"], .inputWithIcon input[type="password"] {
+    padding-left: 40px;
+  }
+  
+  .inputWithIcon {
+    position: relative;
+  }
+  
+  .inputWithIcon i {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    padding: 9px 8px;
+    color: #aaa;
+    transition: 0.3s;
+  }
+  
+  .inputWithIcon input[type="text"]:focus + i, .inputWithIcon input[type="password"]:focus + i {
+    color: #00A6FF;
+  }
+  
+  .inputWithIcon.inputIconBg i {
+    background-color: #aaa;
+    color: #fff;
+    padding: 9px 4px;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .inputWithIcon.inputIconBg input[type="text"]:focus + i, .inputWithIcon.inputIconBg input[type="password"]:focus + i {
+    color: #fff;
+    background-color: #00A6FF;
+  }
+  .login-form img{
+      width: 40%;
+      position: relative;
+      left: 4.5rem;
+  }
+ 
