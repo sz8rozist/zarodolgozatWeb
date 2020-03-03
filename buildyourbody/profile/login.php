@@ -14,8 +14,9 @@
                 $row = $res -> fetch_assoc();
                 $_SESSION['uid'] = $row['f_id'];
                 $_SESSION['user'] = $row['fname'];
+                echo 1
                 
             } else {
-                 http_response_code(500);
+                 echo 0
             }
         }

@@ -9,7 +9,6 @@ $(document).ready(function(){
         let newpwconfirm = $(".pw-confirm").val();
         if(newpw != "" && newpwconfirm != ""){
             if(newpw === newpwconfirm ){
-
                 $.ajax({
                     method: 'POST',
                     url: 'changepassword.php',
