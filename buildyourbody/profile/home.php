@@ -53,7 +53,7 @@ require_once '../php/init.php';
   
     <div class="row">
       
-      <div class="col-lg-6">
+      <div class="col-lg-7">
       <div class="form-group">
       <label>Teljes név</label>
       <input type="email" readonly value="<?php echo $row["teljesnev"]; ?>" class="form-control">
@@ -67,7 +67,7 @@ require_once '../php/init.php';
       <input type="email" readonly value="<?php echo $row["fname"]; ?>" class="form-control">
     </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-5">
       <div class="form-group">
       <label>Jelszó</label>
       <input type="email" readonly value="<?php echo $row["jelszo"]; ?>" class="form-control">
