@@ -1,5 +1,29 @@
 $(document).ready(function(){
     //Login
+    $(".login").click(function(){
+        let userN = $("#username").val();
+        let pw = $("#password").val();
+        if(userN == "" || pw == ""){
+            $("#password").after("<div class='alert alert-danger text-center'>Minden mező kitöltése kötelező!</div>");
+            $(".alert-danger").delay(1000).fadeOut(1800);
+        }else{
+            $.ajax({
+                url: "profile/login.php",
+                method: "POST",
+                dataType: "text",
+                data: {username:userN, password:pw},
+                success: function(response){
+                    if(response === "Yes"){
+                        $("#password").after("<div class='alert alert-success text-center'>Sikeres bejelentkezés!</div>");
+                        $(".alert-success").delay(1000).fadeOut(1800);
+                        setTimeout(function(){
+                            window.location = "profile/home.php";
+                        },1200);
+                    }
+                }
+            });
+        }
+    });
     
     //Login
     //Change password

@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['newpw'])){
             }
             $statement -> close();
     }
-    $con -> close();
+
 
 ?>
 <!DOCTYPE html>
@@ -47,9 +47,67 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['newpw'])){
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="profile.php">Adatok</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Profil</a>
+      <div class="dropdown-menu">
+      <?php
+        $sql = "SELECT * FROM felhasznalok WHERE f_id= ".$_SESSION['uid'];
+        $res = $con->query($sql);
+        if($res){
+            $row = mysqli_fetch_assoc($res);
+            $fname = $row['fname'];
+            $jelszo = $row['jelszo'];
+            $teljesnev = $row['teljesnev'];
+            $email = $row['email'];
+            $tsuly = $row['tsuly'];
+            $tmagassag = $row['tmagassag'];
+    ?>
+    <img src="../img/user.png" class="userimage" alt="Felhasználó">
+  <form class="px-4 py-3">
+  
+    <div class="row">
+      
+      <div class="col-lg-6">
+      <div class="form-group">
+      <label>Teljes név</label>
+      <input type="email" readonly value="<?php echo $row["teljesnev"]; ?>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>E-mail</label>
+      <input type="email" readonly value="<?php echo $row["email"]; ?>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Felhasználónév</label>
+      <input type="email" readonly value="<?php echo $row["fname"]; ?>" class="form-control">
+    </div>
+      </div>
+      <div class="col-lg-6">
+      <div class="form-group">
+      <label>Jelszó</label>
+      <input type="email" readonly value="<?php echo $row["jelszo"]; ?>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Testsúly</label>
+      <input type="email" readonly value="<?php echo $row["tsuly"]; ?>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Testmagasság</label>
+      <input type="email" readonly value="<?php echo $row["tmagassag"]; ?>" class="form-control">
+    </div>
+      </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+          <button class="btn btn-primary text-white">Módosítás</button>
+        </div>
+      </div>
+
+    
+  </form>
+
       </li>
+      <?php     $con -> close(); } ?>
       <li class="nav-item">
         <a class="nav-link" href="#">Táplálkozás</a>
       </li>

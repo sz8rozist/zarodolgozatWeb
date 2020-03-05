@@ -63,17 +63,17 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" class="login-form">
+        <form action="index.php" method="post" class="login-form">
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-12 col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <img src="img/key.png" alt="" class="src">
                 <div class="form-group inputWithIcon">
-                  <input type="text" name="" id="" placeholder = "Felhasználónév" class="form-control">
+                  <input type="text" name="user" id="username" placeholder = "Felhasználónév" class="form-control">
                   <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                 </div>
                 <div class="form-group inputWithIcon">
-                  <input type="password" name="" placeholder="Jelszó" id="" class="form-control">
+                  <input type="password" name="pw" placeholder="Jelszó" id="password" class="form-control">
                   <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
                 </div>
               </div>
@@ -82,7 +82,7 @@
         </form>
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-primary btn-lg">Bejelentkezés</button>
+        <button type="submit" class="btn login btn-primary btn-lg">Bejelentkezés</button>
 </div>
     </div>
   </div>
