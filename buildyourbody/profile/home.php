@@ -19,12 +19,13 @@ require_once '../php/init.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/main.js"></script>
     <title>Build Your Body - Home</title>
 </head>
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
+<nav class="navbar navbar-expand-lg navbar-dark">
 <div class="container">
   <a href="home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,34 +99,27 @@ require_once '../php/init.php';
         <a class="nav-link" href="#">Táplálkozás</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Edzés</a>
+        <a class="nav-link edzesbtn" href="#">Edzés</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Kiegészítők</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Kijelentkezés</a>
+      </li>
   </div>
   </div>
 </nav>
-<div class="welcome">
-<div class="container">
-<div class="row pt-4">
-    <div class="col-12 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <div class="user">
-        <span>Üdvözlöm <?php echo $_SESSION['user']; ?></span>
-        </div>
-        
+
+<section class="edzes">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p>valami</p>
+      </div>
     </div>
-    <div class="col-12 col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
-    <div class="changepw">
-        <a href="changepassword.php"><i class="fa fa-cog"></i>Jelszó csere</a>
-        </div>
-    <div class="logout">
-    <a href="logout.php"><i class="fa fa-sign-out"></i>Kijelentkezés</a>
-    </div>
-    </div>
-</div>
-</div>
-</div>
+  </div>
+</section>
 
 
  <footer class="page-footer">

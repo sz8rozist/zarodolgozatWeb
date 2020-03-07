@@ -3,110 +3,49 @@
     padding: 0;
 }
 body{
-    font-family: "Roboto" !important;
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%,
-    #00A6FF), url('../img/transback.jpg');
+    rgba(0,0,0,0.8)), url('../img/photo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
 }
-.navbar-light .navbar-nav .nav-link,
-.navbar-light .navbar-nav .nav-link{
-    color: #0057BA !important;
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    
-}
-.navbar-light{
-    border-bottom: 0.5px solid lightgray;
-}
-.navbar-light 
-.navbar-brand{
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    color: #00A6FF !important;
-    font-weight: 700;
-}
-.navbar-light
-.navbar-brand img{
-    width: 40px;
-}
-.logout a,
-.changepw a{
-    color: #00A6FF!important;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: .8rem;
-    font-weight: 700;
-    transition: .2s all ease-in-out;
-}
-.logout a:hover,
-.changepw a:hover{
-    text-decoration: none;
-    color: #0057BA !important
-}
-.logout i,
-.changepw i{
-    padding-right: .3rem;
-}
-.welcome{
-    background: white;
-    padding-bottom: 1rem;
-    border-bottom: 0.5px solid lightgray;
-}
-.user{
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link{
+    color: white !important;
     font-size: .9rem;
     font-weight: 700;
     text-transform: uppercase;
+    transition: .3s ease-in-out;
+    
+}
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #00A6FF !important;
+    
+}
+.navbar-dark{
+    background: rgba(0, 0, 0, 0.6);
+    
+}
+.navbar-dark 
+.navbar-brand{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: white !important;
+    font-weight: 700;
+    letter-spacing: .1rem;
+}
+.navbar-dark
+.navbar-brand img{
+    width: 40px;
 }
 .page-footer{
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: #0057BA;
+    background: rgba(0, 0, 0, 0.6);
     font-weight: 700;
-}
-.content{
-    padding-top: 1rem;
-
-}
-.px-0{
-    padding-left: 0 !important;
-}
-.px-4{
-    padding-right: 1.5rem !important;
-    padding-left: 1.5rem !important;
-}
-.changepw h2{
-    font-size: 1.4rem;
-    margin: 1.8rem 0 3rem .5rem;
-}
-label{
-    font-style: italic;
-    color: #414042;
-    font-size: .9rem;
-}
-input:not([type=submit]){
-    border: none;
-}
-.savenewpw{
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-    border: none;
-    background: #00A6FF;
-    color: #fff;
-    transition: .2s all ease-in-out;
-}
-.savenewpw:hover{
-    background: #0057BA;
-}
-.message{
-    padding-right: 1rem;
-    font-size: 18px;
-    font-family: Century Gothic;
-    font-weight: 500;
-    color: red;
 }
 .profile{
     padding-top: 1rem;
@@ -118,7 +57,7 @@ input:not([type=submit]){
 .dropdown-menu{
     min-width: 400px !important;
     border-radius: 20px !important;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8) !important;
+    box-shadow: 10px 10px 10px 5px black !important;
 }
 .userimage{
     position: relative;
@@ -127,4 +66,13 @@ input:not([type=submit]){
     height: 100px;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
+}
+.edzes{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 65vw;
+    height: 70vh;
+    margin: 0 auto;
+    margin-top: 5rem;
+    display: none;
 }

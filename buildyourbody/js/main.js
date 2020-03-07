@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $(".edzesbtn").click(function(){
+        $(".edzes").fadeIn(800);
+    });
     //Login
     $(".login").click(function(){
         let userN = $("#username").val();
@@ -26,42 +29,6 @@ $(document).ready(function(){
     });
     
     //Login
-    //Change password
-    $(document).on('click','.savenewpw',function(e){
-        e.preventDefault();
-        let newpw = $(".pw").val();
-        let newpwconfirm = $(".pw-confirm").val();
-        if(newpw != "" && newpwconfirm != ""){
-            if(newpw === newpwconfirm ){
-                $.ajax({
-                    method: 'POST',
-                    url: 'changepassword.php',
-                    data: {newpw:newpw},
-                    success: function(){
-                        $(".message").html("<span style='color:green;'>Sikeres jelszóváltoztatás!</span>").delay(1000).fadeOut(1800);
-                        setTimeout(function(){
-                            location.reload();
-                        },2500);
-                    },
-                    error: function(){
-                    }
-                });
-            }else{
-                $(".message").html("A két jelszó nem egyezik!").delay(1000).fadeOut(1800);
-            setTimeout(function(){
-                location.reload();
-            },2500);
-            }
-        }
-        else{
-            $(".message").html("Minden mező kitöltése kötelező!").delay(1000).fadeOut(1800);
-            setTimeout(function(){
-                location.reload();
-            },2500);
-        }
-
-    });
-    //Change password
     //Window Scroll
     $(window).scroll(function(){
         if($(window).scrollTop()>60){
