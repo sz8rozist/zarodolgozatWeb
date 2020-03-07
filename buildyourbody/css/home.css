@@ -67,12 +67,3 @@ body{
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
 }
-.edzes{
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    width: 65vw;
-    height: 70vh;
-    margin: 0 auto;
-    margin-top: 5rem;
-    display: none;
-}

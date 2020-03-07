@@ -25,7 +25,7 @@ require_once '../php/init.php';
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 <div class="container">
   <a href="home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,36 +57,37 @@ require_once '../php/init.php';
       <div class="col-lg-7">
       <div class="form-group">
       <label>Teljes név</label>
-      <input type="email" readonly value="<?php echo $row["teljesnev"]; ?>" class="form-control">
+      <input type="text" id="input-teljesnev" readonly value="<?php echo $row["teljesnev"]; ?>" class="form-control">
     </div>
     <div class="form-group">
       <label>E-mail</label>
-      <input type="email" readonly value="<?php echo $row["email"]; ?>" class="form-control">
+      <input type="text" id="input-email" readonly value="<?php echo $row["email"]; ?>" class="form-control">
     </div>
     <div class="form-group">
       <label>Felhasználónév</label>
-      <input type="email" readonly value="<?php echo $row["fname"]; ?>" class="form-control">
+      <input type="text" id="input-fname" readonly value="<?php echo $row["fname"]; ?>" class="form-control">
     </div>
       </div>
       <div class="col-lg-5">
       <div class="form-group">
       <label>Jelszó</label>
-      <input type="email" readonly value="<?php echo $row["jelszo"]; ?>" class="form-control">
+      <input type="password" id="input-pw" readonly value="<?php echo $row["jelszo"]; ?>" class="form-control">
     </div>
     <div class="form-group">
       <label>Testsúly</label>
-      <input type="email" readonly value="<?php echo $row["tsuly"]; ?>" class="form-control">
+      <input type="text" id="input-tsuly" readonly value="<?php echo $row["tsuly"]; ?>" class="form-control">
     </div>
     <div class="form-group">
       <label>Testmagasság</label>
-      <input type="email" readonly value="<?php echo $row["tmagassag"]; ?>" class="form-control">
+      <input type="text" id="input-tmagassag" readonly value="<?php echo $row["tmagassag"]; ?>" class="form-control">
     </div>
       </div>
 
     </div>
     <div class="row">
-        <div class="col-lg-12">
-          <button class="btn btn-primary text-white">Módosítás</button>
+        <div class="col-lg-12 gombok">
+          <button class="btn btn-primary update-profile text-white">Módosítás</button>
+          <button class="btn btn-success savenew-profile text-white float-right" disabled>Mentés</button>
         </div>
       </div>
 
@@ -111,18 +112,9 @@ require_once '../php/init.php';
   </div>
 </nav>
 
-<section class="edzes">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <p>valami</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 
- <footer class="page-footer">
+ <footer class="page-footer fixed-bottom">
 
   <div class="footer-copyright text-white text-center py-3">
       <span>© 2020 Copyright: Rózsa István</span>
