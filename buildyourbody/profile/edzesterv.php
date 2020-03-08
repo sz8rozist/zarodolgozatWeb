@@ -25,7 +25,7 @@ require_once '../php/init.php';
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark">
 <div class="container">
   <a href="home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,7 +102,7 @@ require_once '../php/init.php';
       <li class="nav-item">
       <div class="dropdown">
       <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Edzésterv</a>
-  <div class="dropdown-menu edzesdropdown col-lg-8 col-md-8 col-sm-12" aria-labelledby="dropdownMenuButton">
+  <div class="dropdown-menu edzesdropdown" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item edzes-menu" href="edzesterv.php">Edzésterv</a>
     <a class="dropdown-item edzes-menu" href="#">Edzés</a>
     <a class="dropdown-item edzes-menu" href="#">Gyakorlatok</a>
@@ -119,9 +119,48 @@ require_once '../php/init.php';
   </div>
 </nav>
 
+<section class="terv">
+<div class="container edzesterv">
+<div class="row">
+        <div class="col-lg-12">
+        <table class="table table-light table-striped table-borderless">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>GyakorlatID</th>
+                            <th>Sorozatszám</th>
+                            <th>Ismétlésszám</th>
+                            <th>Törlés</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            <?php 
+                $sql = "SELECT * FROM edzestervek";
+                $res = $con-> query($sql);
+                if($res){
+                    while($row = $res -> fetch_assoc()){
+            ?>
+                        <tr>
+                            <td><?php echo $row['gyakorlat_id']; ?></td>
+                            <td><?php echo $row['sorozatszam']; ?></td>
+                            <td><?php echo $row['ismetlesszam']; ?></td>
+                            <td id="<?php echo $row['edzesterv_id']; ?>"><img id="trash" src=../img/trash.png alt=""></td>
+                        </tr>
+                   
+            <?php
+                }
+            }   
+            
+            ?>
+             </tbody>
+            </table>
+        </div>
+</div>
+           
+</div>
+</section>
 
 
- <footer class="page-footer fixed-bottom">
+ <footer class="page-footer">
 
   <div class="footer-copyright text-white text-center py-3">
       <span>© 2020 Copyright: Rózsa István</span>

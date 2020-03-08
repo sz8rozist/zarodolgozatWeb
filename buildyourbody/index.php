@@ -28,20 +28,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item ">
-        <a class="nav-link active" href="index.php">Kezdőlap</a>
+        <a class="nav-link active" id="kezdolap" href="index.php">Kezdőlap</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModalCenter" >Belépés</a>
       </li>
     
       <li class="nav-item">
-        <a class="nav-link"  href="#">Link</a>
+        <a class="nav-link" id="reg"  href="#">Regisztráció</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" id="rolunk" href="#">Rólunk</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" id="eletmod" href="#">Életmód</a>
       </li>
       
 
@@ -150,7 +150,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h1>Te döntöd el mit érzel holnap, izomlázat vagy bűntudatot</h1>
+            <h1>Te döntöd el mit érzel holnap, izomlázat vagy bűntudatot.</h1>
           </div>
         </div>
       </div>
@@ -160,9 +160,9 @@
     <section class="kiegeszito">
       <div class="container">
            <div class="row justify-content-center">
-             <div class="col-12 pb-70 col-lg-8 col-md-8">
+             <div class="col-12 pb-70 col-lg-12 col-md-10">
                <div class="text-center">
-                 <h1>Sikeres fejlődés kulcsa</h1>
+                 <h1>Ha sikereket akarsz elérni ennek a három feltételnek teljesülnie kell.</h1>
                </div>
              </div>
            </div>
@@ -185,7 +185,7 @@
                <div class="single-offer">
                  <img class="img-fluid" src="img/relax.png">
                  <h4>Regeneráció</h4>
-                 <p>Sokan úgy gondolják, és egyben helytelenül, hogy az izom az edzés közben növekszik.  Az izom a regeneráció azaz a pihenés során növekszik.</p>
+                 <p>Sokan úgy gondolják, és egyben helytelenül, hogy az izom edzés közben növekszik.  Az izom a regeneráció azaz a pihenés során növekszik.</p>
                </div>
              </div>
            </div>
@@ -193,29 +193,46 @@
     </section>
 
 
-    <section class="bmi">
+    <section class="registration">
       <div class="container">
-        <div class="row justify-content-center d-flex">
-          <div class="col-12 pb-70">
-            <div class="text-center">
-              <h1>Számold ki a testtömegindexed</h1>
-            </div>
+      <div class="row">
+      <div class="col-lg-6">
+                <div class="text-center">
+                 <h1>Csatlakozz hozzánk</h1>
+                 <button class="btn-reg">Regisztrálok</button>
+               </div>
           </div>
+        <div class="col-lg-6">
+            <form class="px-4 py-3 regform">
+                <div class="form-group">
+                <label>Teljes név</label>
+                <input type="text" class="form-control reg-input" name="name">
+              </div>
+              <div class="form-group">
+                <label>E-mail</label>
+                <input type="text"  class="form-control reg-input" name="email">
+              </div>
+              <div class="form-group">
+                <label>Felhasználónév</label>
+                <input type="text"  class="form-control reg-input" name="fname">
+              </div>
+              <div class="form-group">
+                <label>Jelszó</label>
+                <input type="password"  class="form-control reg-input" name="pw">
+              </div>
+              <div class="form-group">
+                <label>Testsúly</label>
+                <input type="text"  class="form-control reg-input" name="tsuly">
+              </div>
+              <div class="form-group">
+                <label>Testmagasság</label>
+                <input type="text"  class="form-control reg-input" name="tmagassag">
+              </div>
+              <div class="reg-message"></div>
+            </form>
+            
         </div>
-        <div class="row justify-content-center align-items-start">
-            <div class="col-lg-3 col-md-6 cols">
-              <input type="text" name="" id="" placeholder="Magasságod" class="form-control mb-20">
-            </div>
-            <div class="col-lg-3 col-md-6 cols">
-            <input type="text" name="" id="" placeholder="Súlyod" class="form-control mb-20">
-            </div>
-            <div class="col-lg-3 col-md-6 cols">
-            <input type="text" name="" id="" placeholder="Eredmény" class="form-control mb-20">
-            </div>
-            <div class="col-lg-3 col-md-6 cols">
-              <a href="" class="primary-btn header-btn text-uppercase">Számol</a>
-            </div>
-        </div>
+
       </div>
     </section>
 

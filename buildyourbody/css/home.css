@@ -54,10 +54,29 @@ body{
     font-size: 1.4rem;
     margin: 1.8rem 0 3rem .5rem;
 }
-.dropdown-menu{
+.profiledropdown{
     min-width: 400px !important;
     border-radius: 20px !important;
-    box-shadow: 10px 10px 10px 5px black !important;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8) !important;
+}
+.edzesdropdown{
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8) !important;
+}
+.dropdown:hover >.dropdown-menu{
+    display: block;
+}
+.edzes-menu:hover{
+    background-color: #00A6FF !important;
+    color: white !important;
+    box-shadow: 1px 1px 3px 4px #00A6FF;
+    letter-spacing: .2rem;
+}
+.table{
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8) !important;
+}
+.edzes-menu{
+    transition: .3s ease-in-out;
+    font-size: .9rem;
 }
 .userimage{
     position: relative;
@@ -66,4 +85,11 @@ body{
     height: 100px;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
+}
+.terv{
+    color: black;
+    margin-top: 2rem;
+}
+#trash:hover{
+    cursor: grab;
 }

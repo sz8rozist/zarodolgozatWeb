@@ -4,8 +4,8 @@ $(document).ready(function(){
         let userN = $("#username").val();
         let pw = $("#password").val();
         if(userN == "" || pw == ""){
-            $("#password").after("<div class='alert alert-danger text-center'>Minden mező kitöltése kötelező!</div>");
-            $(".alert-danger").delay(1000).fadeOut(1800);
+            $("#password").after("<div class='alert alert-warning text-center'>Minden mező kitöltése kötelező!</div>");
+            $(".alert-warning").delay(1000).fadeOut(1800);
         }else{
             $.ajax({
                 url: "profile/login.php",
@@ -20,14 +20,38 @@ $(document).ready(function(){
                             window.location = "profile/home.php";
                         },1200);
                     }else{
-                        $("#password").after("<div class='alert alert-warning text-center'>Sikertelen bejelentkezés!</div>");
-                        $(".alert-warning").delay(1000).fadeOut(1800);
+                        $("#password").after("<div class='alert alert-danger text-center'>Sikertelen bejelentkezés!</div>");
+                        $(".alert-danger").delay(1000).fadeOut(1800);
                     }
                 }
             });
         }
     });
     //Login
+    //Registration
+    $(".btn-reg").click(function(){
+        let nev = $("input[name='name']").val();
+        let email = $("input[name='email']").val();
+        let fname = $("input[name='fname']").val();
+        let pw = $("input[name='pw']").val();
+        let tsuly = $("input[name='tsuly']").val();
+        let tmagassag = $("input[name='tmagassag']").val();
+        if(nev == "" || email == "" || fname == "" || pw == "" || tsuly == "" || tmagassag == ""){
+            $(".reg-message").html("<div class='alert alert-warning text-center'>"+"<i class='fa fa-exclamation-triangle'></i>Minden mező kitöltése kötelező!</div>");
+        }else{
+            $(".reg-message").html("");
+            $.ajax({
+                url: 'profile/reg.php',
+                method: 'POST',
+                data: {name:nev, email:email, fname:fname, pw:pw, tsuly:tsuly, tmagassag:tmagassag},
+                success: function(response){
+                    $(".reg-message").html("<div class='alert alert-success text-center'>"+"<i class='fa fa-check'></i>"+response+"</div>").delay(1000).fadeOut(1800);
+                }
+            });
+        }
+     
+    });
+    //Registration
     //Update profile
     $(".update-profile").click(function(e){
         e.preventDefault();
@@ -49,14 +73,14 @@ $(document).ready(function(){
             data: {nev:nev,email:email,fname:fname,pw:pw,tsuly:tsuly,tmagassag:tmagassag},
             success: function(response){
                 if(response === "1"){
-                    $(".gombok").after("<div class='col-lg-12' style='padding-top: 1rem;'><div class='alert alert-success text-center'>Sikeres módosítás!</div></div>");
+                    $(".gombok").after("<div class='col-lg-12' style='padding-top: 1rem;'><div class='alert alert-success text-center'><i class='fa fa-check'></i>Sikeres módosítás!</div></div>");
                     setTimeout(function(){
                         $(".alert-success").delay(1000).fadeOut(1800);
                         $(".form-control").attr("readonly",true);
                         $(".savenew-profile").attr("disabled",true);
                     },600);
                 }else{
-                    $(".gombok").after("<div class='col-lg-12' style='padding-top: 1rem;'><div class='alert alert-warning text-center'>Ooops... Hiba történt!</div></div>");
+                    $(".gombok").after("<div class='col-lg-12' style='padding-top: 1rem;'><div class='alert alert-warning text-center'><i class='fa fa-warning'></i>Ooops... Hiba történt!</div></div>");
                 }
             }
         });
@@ -74,14 +98,23 @@ $(document).ready(function(){
     $('.scrolltop').click(function(){
         $('html,body').animate({scrollTop: 0}, 1500);
         return false;
-      });
-
-
-
-     /* $("#contact").click(function(){
-        $('html, body').animate({ scrollTop: $(".contact-form").offset().top}, 1000);
+    });
+     $("#reg").click(function(){
+        $('html, body').animate({ scrollTop: $(".registration").offset().top}, 1500);
           return false;
-        });*/
+    });
+    $("#rolunk").click(function(){
+        $('html, body').animate({ scrollTop: $(".tartalom-app").offset().top}, 1500);
+          return false;
+    });
+    $("#eletmod").click(function(){
+        $('html, body').animate({ scrollTop: $(".kiegeszito").offset().top}, 1500);
+           return false;
+    });
+    $("#kezdolap").click(function(){
+        $('html, body').animate({ scrollTop: 0}, 1500);
+           return false;
+    });
     //Window Scroll
 
 });
