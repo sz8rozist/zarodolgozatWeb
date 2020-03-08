@@ -93,3 +93,6 @@ body{
 #trash:hover{
     cursor: grab;
 }
+.profiledropdown label{
+    font-style: italic !important;
+}

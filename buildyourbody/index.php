@@ -105,9 +105,17 @@
     </div>
     <div class="carousel-item">
       <img class="d-block h-100 w-100" src="img/slider3.jpg" alt="Second slide">
+      <div class="carousel-caption">
+        <h2 class="slower animated bounceInLeft">Eddz keményebben, mint legutóbb</h2>
+        <h5 class="slower animated bounceInRight">és fittebb leszel, mint voltál.</h5>
+      </div>
     </div>
     <div class="carousel-item">
       <img class="d-block h-100 w-100" src="img/slider2.jpg" alt="Third slide">
+      <div class="carousel-caption">
+      <h2 class="slower animated bounceInLeft">Bármire képes vagy</h2>
+        <h5 class="slower animated bounceInRight">ha elszánod magad.</h5>
+      </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
