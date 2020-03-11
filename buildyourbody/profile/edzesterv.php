@@ -23,8 +23,7 @@ require_once '../php/init.php';
     <title>Build Your Body - <?php echo $_SESSION["user"]; ?></title>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark ">
 <div class="container">
   <a href="home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -157,6 +156,13 @@ require_once '../php/init.php';
            
 </div>
 </section>
+
+<footer class="page-footer">
+
+<div class="footer-copyright text-white text-center py-3">
+    <span>© 2020 Copyright: Rózsa István</span>
+</div>
+</footer>
 
 </body>
 </html>

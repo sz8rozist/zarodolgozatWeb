@@ -116,6 +116,11 @@ require_once '../php/init.php';
   </div>
   </div>
 </nav>
+<footer class="page-footer">
 
+<div class="footer-copyright text-white text-center py-3">
+    <span>© 2020 Copyright: Rózsa István</span>
+</div>
+</footer>
 </body>
 </html>

@@ -2,13 +2,17 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%,
-    rgba(0,0,0,0.8)), url('../img/photo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+    rgba(0,0,0,0.8)), url('../img/photo.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@media screen and (max-width: 992px) {
+   
 }
 .navbar-dark .navbar-nav .nav-link,
 .navbar-dark .navbar-nav .nav-link{
