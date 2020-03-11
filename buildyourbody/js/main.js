@@ -116,5 +116,20 @@ $(document).ready(function(){
            return false;
     });
     //Window Scroll
+    //Izomcsoport
+    $(document).on('change','.izom',function(){
+        let izom = $(this).val();
+        let izomcsid = $(this).children(":selected").attr("id");
+        console.log(izomcsid,izom);
+        $.ajax({
+            url: "getgyakorlatok.php",
+            method: "POST",
+            data: {izomcsid:izomcsid},
+            success: function(data){
+                alert(data);
+            }
+        });
+    });
+    //Izomcsoport
 
 });

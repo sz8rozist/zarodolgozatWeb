@@ -90,6 +90,9 @@ body{
     color: black;
     margin-top: 2rem;
 }
+.gyakorlat{
+    margin-top: 2rem;
+}
 #trash:hover{
     cursor: grab;
 }

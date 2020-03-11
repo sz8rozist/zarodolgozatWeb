@@ -23,7 +23,7 @@ require_once '../php/init.php';
     <title>Build Your Body - <?php echo $_SESSION["user"]; ?></title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark">
 <div class="container">
   <a href="home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,6 +116,30 @@ require_once '../php/init.php';
   </div>
   </div>
 </nav>
+
+<?php
+    $sql = "SELECT * FROM izomcsoportok";
+    $res = $con->query($sql);
+    $select = '<select class="custom-select izom">';
+    while($row = $res ->fetch_array()){
+        $select.= '<option class="izomcs" id='.$row[0].'>'.$row[1].'</option>';
+    }
+    $select .= '</select>';
+
+    
+
+?>
+<section class="gyakorlat">
+    <div class="container">
+        <label>Válassz izomcsoportot!</label>
+        <div class="row">
+            <div class="col-lg-2">
+                    <?php echo $select; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 </body>
 </html>
