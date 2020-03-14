@@ -126,7 +126,7 @@ $(document).ready(function(){
             method: "POST",
             data: {izomcsid:izomcsid},
             success: function(data){
-                alert(data);
+                $(".gyakorlat-leiras").html(data);
             }
         });
     });

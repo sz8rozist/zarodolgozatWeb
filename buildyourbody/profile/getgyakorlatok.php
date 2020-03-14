@@ -7,8 +7,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['izomcsid'])){
     $html = "";
     if($res){
         while($row = $res -> fetch_assoc()){
-            $html .= '<div>'.$row["gynev"].'</div>';
-            $html .= '<div>'.$row["leiras"].'</div>';
+            $html .= '<div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>'.$row['gynev'].'</h2>
+    </div>
+    <div class="flip-box-back">
+      <p>'.$row['leiras'].'</p>
+    </div>
+  </div>
+</div>
+        </div>
+         ';
         }
     }
     echo $html;

@@ -97,9 +97,56 @@ body{
 .gyakorlat{
     margin-top: 2rem;
 }
+.gyakorlat h4{
+    color: #fff;
+    font-size: 22px;
+}
 #trash:hover{
     cursor: grab;
 }
 .profiledropdown label{
     font-style: italic !important;
 }
+.flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: none;
+    perspective: 1000px;
+    padding: 12px;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateX(180deg);
+  }
+  
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  .flip-box-front h2{
+      margin-top: 3rem;
+  }
+  
+  .flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateX(180deg);
+  }

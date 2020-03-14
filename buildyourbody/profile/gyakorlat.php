@@ -21,6 +21,7 @@ require_once '../php/init.php';
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/main.js"></script>
     <title>Build Your Body - <?php echo $_SESSION["user"]; ?></title>
+    
 </head>
 <body>
     
@@ -132,11 +133,14 @@ require_once '../php/init.php';
 ?>
 <section class="gyakorlat">
     <div class="container">
-        <label>Válassz izomcsoportot!</label>
+        <h4>Válassz izomcsoportot!</h4>
         <div class="row">
             <div class="col-lg-2">
                     <?php echo $select; ?>
             </div>
+        </div>
+        <div class="row gyakorlat-leiras">
+          
         </div>
     </div>
 </section>
