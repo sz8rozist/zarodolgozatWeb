@@ -1,88 +1,62 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%,
-    rgba(0,0,0,0.8)), url('../img/photo.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+body {
+    background: url('../img/photo.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-@media screen and (max-width: 992px) {
-   
-}
+
 .navbar-dark .navbar-nav .nav-link,
-.navbar-dark .navbar-nav .nav-link{
+.navbar-dark .navbar-nav .nav-link {
     color: white !important;
     font-size: .9rem;
     font-weight: 700;
     text-transform: uppercase;
     transition: .3s ease-in-out;
-    
 }
+
 .navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link:hover{
+.navbar-dark .navbar-nav .nav-link:hover {
     color: #00A6FF !important;
-    
 }
-.navbar-dark{
+
+.navbar-dark {
     background: rgba(0, 0, 0, 0.6);
-    
 }
-.navbar-dark 
-.navbar-brand{
+
+.navbar-dark .navbar-brand {
     font-size: 1.3rem;
     text-transform: uppercase;
     color: white !important;
     font-weight: 700;
     letter-spacing: .1rem;
 }
-.navbar-dark
-.navbar-brand img{
+
+.navbar-dark .navbar-brand img {
     width: 40px;
 }
-.page-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    font-weight: 700;
-}
-.profile{
+
+.profile {
     padding-top: 1rem;
 }
-.profile h2{
+
+.profile h2 {
     font-size: 1.4rem;
     margin: 1.8rem 0 3rem .5rem;
 }
-.profiledropdown{
+
+.profiledropdown {
     min-width: 400px !important;
     border-radius: 20px !important;
     box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8) !important;
 }
-.edzesdropdown{
-    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8) !important;
-}
-.dropdown:hover >.dropdown-menu{
-    display: block;
-}
-.edzes-menu:hover{
-    background-color: #00A6FF !important;
-    color: white !important;
-    box-shadow: 1px 1px 3px 4px #00A6FF;
-    letter-spacing: .2rem;
-}
-.table{
-    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8) !important;
-}
-.edzes-menu{
-    transition: .3s ease-in-out;
-    font-size: .9rem;
-}
-.userimage{
+
+.userimage {
     position: relative;
     left: 9rem;
     width: 100px;
@@ -90,63 +64,94 @@ body{
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
 }
-.terv{
+
+.terv {
     color: black;
     margin-top: 2rem;
 }
-.gyakorlat{
+
+.gyakorlat {
     margin-top: 2rem;
 }
-.gyakorlat h4{
+
+.gyakorlat h4 {
     color: #fff;
     font-size: 22px;
 }
-#trash:hover{
+
+.table-edzes {
+    margin-top: 2rem;
+}
+
+.pagination_link,
+.pagination_link_gyakorlatok {
+    cursor: grab;
+    padding: 8px;
+    margin-right: 5px;
+    background: #0057BA;
+    color: white;
+    transition: .3s all ease-in-out;
+    opacity: 1;
+}
+
+.pagination_link:hover,
+.pagination_link_gyakorlatok:hover {
+    opacity: 0.6;
+    color: white;
+}
+
+.edzesterv h4 {
+    color: #fff;
+    font-size: 22px;
+}
+
+#edzes_trash:hover {
     cursor: grab;
 }
-.profiledropdown label{
+
+.profiledropdown label {
     font-style: italic !important;
 }
-.flip-box {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    border: none;
-    perspective: 1000px;
-    padding: 12px;
-  }
-  
-  .flip-box-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.modal-title {
+    color: #fff !important;
+}
+
+.modal-header .close {
+    color: #fff !important;
+}
+
+#message p {
+    font-weight: 600;
+    font-size: 18px;
+    color: #0057BA;
+}
+
+.card {
+    margin: 2rem 0 2rem 0;
+    background: #0057BA !important;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8);
+    border-radius: 20px !important;
+    color: white !important;
+}
+
+.card-text {
+    text-align: justify;
+    font-size: 14.5px;
+}
+
+.card-title {
     text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
-  .flip-box:hover .flip-box-inner {
-    transform: rotateX(180deg);
-  }
-  
-  .flip-box-front, .flip-box-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .flip-box-front {
-    background-color: #bbb;
-    color: black;
-  }
-  .flip-box-front h2{
-      margin-top: 3rem;
-  }
-  
-  .flip-box-back {
-    background-color: dodgerblue;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.table-edzes thead {
+    background: #0057BA !important;
+    border: none;
     color: white;
-    transform: rotateX(180deg);
-  }
+}

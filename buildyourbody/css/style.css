@@ -269,4 +269,13 @@ html, body{
       position: relative;
       left: 4.5rem;
   }
+  .name-message,
+  .email-message,
+  .fname-message,
+  .pw-message,
+  .tsuly-message,
+  .tmagassag-message{
+      color: #0057BA;
+      font-weight: 700;
+  }
  

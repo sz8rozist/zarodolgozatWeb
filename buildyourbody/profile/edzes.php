@@ -22,12 +22,62 @@ if (!isset($_SESSION['uid'])) {
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/main.js"></script>
   <title>Build Your Body - <?php echo $_SESSION["user"]; ?></title>
-
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark">
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLongTitle">Új edzés</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post" class="ujedzes_form">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <?php
+                  $sql = "SELECT * FROM izomcsoportok";
+                  $res = $con->query($sql);
+                  $select = '<select class="custom-select ics" required ><option>Izomcsoportok</option>';
+                  while ($row = $res->fetch_array()) {
+                    $select .= '<option id=' . $row[0] . '>' . $row[1] . '</option>';
+                  }
+                  $select .= '</select>';
+                  ?>
+
+                  <div class="form-group">
+                    <?php echo $select; ?>
+                  </div>
+                  <div class="form-group gy">
+
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="sorozatszam" class="form-control" placeholder="Sorozatszám">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="ismetlesszam" class="form-control" placeholder="Ismétlésszám">
+                  </div>
+                  <div id="message"></div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="submit" class="btn saveUjEdzes btn-primary btn-lg">Mentés</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark ">
     <div class="container">
       <a href="home.php" class="navbar-brand"><img src="../img/logo2.png">Build Your Body</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,37 +161,39 @@ if (!isset($_SESSION['uid'])) {
     </div>
   </nav>
 
-  <?php
-  $sql = "SELECT * FROM izomcsoportok";
-  $res = $con->query($sql);
-  $select = '<select class="custom-select izom"><option class="izomcs">Izomcsoportok</option>';
-  while ($row = $res->fetch_array()) {
-    $select .= '<option class="izomcs" id=' . $row[0] . '>' . $row[1] . '</option>';
-  }
-  $select .= '</select>';
-
-
-
-  ?>
-
-  <section class="gyakorlat">
-    <div class="container">
-      <h4>Válassz izomcsoportot!</h4>
+  <section class="terv">
+    <div class="container edzesterv">
+      <h4>Válassz Időpontot!</h4>
       <div class="row">
         <div class="col-lg-3">
+          <?php
+          $uid = $_SESSION['uid'];
+          $sql = "SELECT DISTINCT idopont FROM edzesek WHERE f_id ='$uid'";
+          $res = $con->query($sql);
+          $select = '<select class="custom-select date"><option>Időpontok</option>';
+          while ($row = $res->fetch_array()) {
+            $select .= '<option id=' . $row[0] . '>' . $row[0] . '</option>';
+          }
+          $select .= '</select>';
+          ?>
           <?php echo $select; ?>
+
         </div>
         <div class="col-lg-9 ">
-          <button id="gyakorlat" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter">Új Gyakorlat</button>
+          <button id="edzes" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter">Új Edzés</button>
         </div>
       </div>
-      <div class="row gyakorlat-leiras">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <section class="table">
+
+          </section>
+        </div>
 
       </div>
+
     </div>
   </section>
-
-
 
 </body>
 
