@@ -106,7 +106,7 @@ body {
 }
 
 #edzes_trash:hover {
-    cursor: grab;
+    cursor: pointer;
 }
 
 .profiledropdown label {
@@ -114,11 +114,26 @@ body {
 }
 
 .modal-content {
-    background-color: rgba(0, 0, 0, 0.8) !important;
+    background-color: rgba(36, 37, 42, 0.9) !important;
 }
 
 .modal-title {
     color: #fff !important;
+}
+
+.saveUjEdzes,
+.saveUjGyakorlat,
+.modifyGyakorlat {
+    background: none !important;
+    color: #fff !important;
+    border: 2px solid #0057BA !important;
+    transition: .3s all ease-in-out !important;
+}
+
+.saveUjEdzes:hover,
+.saveUjGyakorlat:hover,
+.modifyGyakorlat:hover {
+    background: #0057BA !important;
 }
 
 .modal-header .close {
@@ -129,6 +144,15 @@ body {
     font-weight: 600;
     font-size: 18px;
     color: #0057BA;
+}
+
+#del-gyakorlatok:hover,
+#update-gyakorlatok:hover {
+    cursor: pointer;
+}
+
+.gy-h5 {
+    margin: 25px 10px 25px 10px;
 }
 
 .card {

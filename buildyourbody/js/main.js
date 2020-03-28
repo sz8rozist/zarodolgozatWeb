@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function() {
     /* ------------------------------- Login -------------------------------*/
-    $(".login").click(function () {
+    $(".login").click(function() {
         let userN = $("#username").val();
         let pw = $("#password").val();
         if (userN == "" || pw == "") {
@@ -12,9 +12,9 @@ $(document).ready(function () {
                 method: "POST",
                 dataType: "text",
                 data: { username: userN, password: pw },
-                success: function (response) {
+                success: function(response) {
                     if (response === "Yes") {
-                        setTimeout(function () {
+                        setTimeout(function() {
                             window.location = "profile/home.php";
                         }, 600);
                     } else {
@@ -28,7 +28,7 @@ $(document).ready(function () {
     /* ------------------------------- Login -------------------------------*/
 
     /* ------------------------------- Registration -------------------------------*/
-    $(function () {
+    $(function() {
         $(".name-message").hide();
         $(".email-message").hide();
         $(".fname-message").hide();
@@ -44,22 +44,22 @@ $(document).ready(function () {
         let error_tmagassag = false;
 
 
-        $("[name=name]").focusout(function () {
+        $("[name=name]").focusout(function() {
             check_name();
         });
-        $("[name=email]").focusout(function () {
+        $("[name=email]").focusout(function() {
             check_email();
         });
-        $("[name=fname]").focusout(function () {
+        $("[name=fname]").focusout(function() {
             check_fname();
         });
-        $("[name=reg-pw]").focusout(function () {
+        $("[name=reg-pw]").focusout(function() {
             check_pw();
         });
-        $("[name=tsuly]").focusout(function () {
+        $("[name=tsuly]").focusout(function() {
             check_tsuly();
         });
-        $("[name=tmagassag]").focusout(function () {
+        $("[name=tmagassag]").focusout(function() {
             check_tmagassag();
         });
 
@@ -75,8 +75,9 @@ $(document).ready(function () {
                 error_name = true;
             }
         }
+
         function check_email() {
-            var emailregex = new RegExp(/^(?=.{1,64}@)(?:("[^"\\]*(?:\\.[^"\\]*)*"@)|((?:[0-9a-z](?:\.(?!\.)|[-!#\$%&'\*\+\/=\?\^`\{\}\|~\w])*)?[0-9a-z]@))(?=.{1,255}$)(?:(\[(?:\d{1,3}\.){3}\d{1,3}\])|((?:(?=.{1,63}\.)[0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9])|((?=.{1,63}$)[0-9a-z][-\w]*))$/)
+            var emailregex = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
             let email = $("[name=email]").val();
             if (emailregex.test(email)) {
                 $(".email-message").hide();
@@ -87,10 +88,11 @@ $(document).ready(function () {
                 error_email = true;
             }
         }
+
         function check_fname() {
-            var regexNumber = new RegExp(/[^A-Za-z0-9]+/);
+            var regexNumber = new RegExp(/^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/);
             var fname = $("[name=fname]").val();
-            if (fname.length >= 6 || regexNumber.test(fname)) {
+            if (regexNumber.test(fname) && fname.length > 6) {
                 $(".fname-message").hide();
 
             } else {
@@ -99,8 +101,9 @@ $(document).ready(function () {
                 error_fname = true;
             }
         }
+
         function check_pw() {
-            var regexpw = new RegExp(/^[a-zA-Z0-9]*$/);
+            var regexpw = new RegExp(/^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/);
             var pw = $("[name=reg-pw]").val();
             if (pw.length >= 7 && regexpw.test(pw)) {
                 $(".pw-message").hide();
@@ -111,6 +114,7 @@ $(document).ready(function () {
                 error_pw = true;
             }
         }
+
         function check_tsuly() {
             let number = new RegExp(/^[0-9]+$/);
             let tsuly = $("[name=tsuly]").val();
@@ -123,6 +127,7 @@ $(document).ready(function () {
                 error_tsuly = true;
             }
         }
+
         function check_tmagassag() {
             let number = new RegExp(/^[0-9]+$/);
             let tmagassag = $("[name=tmagassag]").val();
@@ -136,7 +141,7 @@ $(document).ready(function () {
             }
         }
 
-        $(".btn-reg").click(function () {
+        $(".btn-reg").click(function() {
             let nev = $("input[name='name']").val();
             let email = $("input[name='email']").val();
             let fname = $("input[name='fname']").val();
@@ -163,9 +168,9 @@ $(document).ready(function () {
                     url: 'profile/reg.php',
                     method: 'POST',
                     data: { name: nev, email: email, fname: fname, pw: pw, tsuly: tsuly, tmagassag: tmagassag },
-                    success: function (response) {
-                        $(".reg-message").html("<div class='alert alert-success text-center'>" + "<i class='fa fa-check'></i>" + response + "</div>");
-                        setTimeout(function () {
+                    success: function(response) {
+                        $(".reg-message").html("<div class='text-success text-center'>" + "<i class='fa fa-check'></i>" + response + "</div>");
+                        setTimeout(function() {
                             location.reload();
                         }, 800);
                     }
@@ -180,66 +185,196 @@ $(document).ready(function () {
 
 
     /* ------------------------------- Update profile -------------------------------*/
-    $(".update-profile").click(function (e) {
+    $(function() {
+        $(".name-text").hide();
+        $(".email-text").hide();
+        $(".fname-text").hide();
+        $(".pw-text").hide();
+        $(".tsuly-text").hide();
+        $(".tmagassag-text").hide();
+
+        let name_error = false;
+        let email_error = false;
+        let fname_error = false;
+        let pw_error = false;
+        let tsuly_error = false;
+        let tmagassag_error = false;
+
+        $("#input-teljesnev").focusout(function() {
+            validate_name();
+        });
+        $("#input-email").focusout(function() {
+            validate_email();
+        });
+        $("#input-fname").focusout(function() {
+            validate_fname();
+        });
+        $("#input-pw").focusout(function() {
+            validate_pw();
+        });
+        $("#input-tsuly").focusout(function() {
+            validate_tsuly();
+        });
+        $("#input-tmagassag").focusout(function() {
+            validate_tmagassag();
+
+        });
+
+        function validate_name() {
+            let regex1 = new RegExp(/^[a-zA-Z ]*$/);
+            let name = $("#input-teljesnev").val();
+            if (!regex1.test(name)) {
+                $(".name-text").hide();
+            } else {
+                $(".name-text").html("Kis és nagybetűt és szóköznt is tartalmaznia kell");
+                $(".name-text").show();
+                name_error = true;
+            }
+        }
+
+        function validate_email() {
+            let regex2 = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+            let email = $("#input-email").val();
+            if (regex2.test(email)) {
+                $(".email-text").hide();
+            } else {
+                $(".email-text").html("Hibás email cím!");
+                $(".email-text").show();
+                email_error = true;
+            }
+        }
+
+        function validate_fname() {
+            let regex3 = new RegExp(/^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/);
+            let fname = $("#input-fname").val();
+            if (fname.length >= 6 && regex3.test(fname)) {
+                $(".fname-text").hide();
+            } else {
+                $(".fname-text").html("Min. 6 karakter és számot is kell tartalmazzon!");
+                $(".fname-text").show();
+                fname_error = true;
+            }
+        }
+
+        function validate_pw() {
+            let regex3 = new RegExp(/^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/);
+            let pw = $("#input-pw").val();
+            if (pw.length >= 6 && regex3.test(pw)) {
+                $(".pw-text").hide();
+            } else {
+                $(".pw-text").html("Min. 6 karakter és számot is kell tartalmazzon!");
+                $(".pw-text").show();
+                pw_error = true;
+            }
+        }
+
+        function validate_tsuly() {
+            let number = new RegExp(/^[0-9]+$/);
+            let tsuly = $("#input-tsuly").val();
+            if (number.test(tsuly)) {
+                $(".tsuly-text").hide();
+
+            } else {
+                $(".tsuly-text").html("Csak számot adhatsz meg!");
+                $(".tsuly-text").show();
+                tsuly_error = true;
+            }
+        }
+
+
+        function validate_tmagassag() {
+            let number = new RegExp(/^[0-9]+$/);
+            let tmagassag = $("#input-tmagassag").val();
+            if (number.test(tmagassag)) {
+                $(".tmagassag-text").hide();
+
+
+            } else {
+                $(".tmagassag-text").html("Csak számot adhatsz meg!");
+                $(".tmagassag-text").show();
+                tmagassag_error = true;
+            }
+        }
+
+
+        $(".savenew-profile").click(function(e) {
+            e.preventDefault();
+            let nev = $("#input-teljesnev").val();
+            let email = $("#input-email").val();
+            let fname = $("#input-fname").val();
+            let pw = $("#input-pw").val();
+            let tsuly = $("#input-tsuly").val();
+            let tmagassag = $("#input-tmagassag").val();
+            name_error = false;
+            email_error = false;
+            fname_error = false;
+            pw_error = false;
+            tsuly_error = false;
+            tmagassag_error = false;
+
+            validate_email();
+            validate_name();
+            validate_fname();
+            validate_pw();
+            validate_tmagassag();
+            validate_tsuly();
+
+            if (name_error == false && email_error == false && fname_error == false && pw_error == false && tsuly_error == false && tmagassag_error == false) {
+                //console.log(nev + ", " + email + ", " + fname + ", " + pw + ", " + tsuly + ", " + tmagassag);
+                $.ajax({
+                    url: '../php/update_profile.php',
+                    method: 'POST',
+                    data: { nev: nev, email: email, fname: fname, pw: pw, tsuly: tsuly, tmagassag: tmagassag },
+                    success: function(response) {
+                        if (response === "1") {
+                            $(".gombok").after("<div class='col-lg-12' style='padding-top: 1rem;'><div class='u text-center text-success'><i class='fa fa-check'></i>Sikeres módosítás!</div></div>");
+                            setTimeout(function() {
+                                $(".u").delay(1000).fadeOut(800);
+                                $(".form-control").attr("readonly", true);
+                                $(".savenew-profile").attr("disabled", true);
+                            }, 600);
+                        } else {
+                            $(".gombok").after("<div class='col-lg-12' style='padding-top: 1rem;'><div class='text-center text-danger'><i class='fa fa-warning'></i>Ooops... Hiba történt!</div></div>");
+                        }
+                    }
+                });
+            }
+
+        });
+
+    });
+    $(".update-profile").click(function(e) {
         e.preventDefault();
         $(".form-control").removeAttr("readonly");
         $(".savenew-profile").removeAttr("disabled");
     });
-    $(".savenew-profile").click(function (e) {
-        e.preventDefault();
-        let nev = $("#input-teljesnev").val();
-        let email = $("#input-email").val();
-        let fname = $("#input-fname").val();
-        let pw = $("#input-pw").val();
-        let tsuly = $("#input-tsuly").val();
-        let tmagassag = $("#input-tmagassag").val();
-        //console.log(nev + ", " + email + ", " + fname + ", " + pw + ", " + tsuly + ", " + tmagassag);
-        $.ajax({
-            url: '../php/update_profile.php',
-            method: 'POST',
-            data: { nev: nev, email: email, fname: fname, pw: pw, tsuly: tsuly, tmagassag: tmagassag },
-            success: function (response) {
-                if (response === "1") {
-                    $(".gombok").after("<div class='col-lg-12' style='padding-top: 1rem;'><div class='alert alert-success text-center'><i class='fa fa-check'></i>Sikeres módosítás!</div></div>");
-                    setTimeout(function () {
-                        $(".alert-success").delay(1000).fadeOut(1800);
-                        $(".form-control").attr("readonly", true);
-                        $(".savenew-profile").attr("disabled", true);
-                    }, 600);
-                } else {
-                    $(".gombok").after("<div class='col-lg-12' style='padding-top: 1rem;'><div class='alert alert-warning text-center'><i class='fa fa-warning'></i>Ooops... Hiba történt!</div></div>");
-                }
-            }
-        });
-    });
     /* ------------------------------- Update profile -------------------------------*/
 
     /* ------------------------------- Window Scroll -------------------------------*/
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(window).scrollTop() > 60) {
             $('.scrolltop').fadeIn(800);
-        }
-        else {
+        } else {
             $('.scrolltop').fadeOut(800);
         }
     });
-    $('.scrolltop').click(function () {
+    $('.scrolltop').click(function() {
         $('html,body').animate({ scrollTop: 0 }, 1500);
         return false;
     });
-    $("#reg").click(function () {
+    $("#reg").click(function() {
         $('html, body').animate({ scrollTop: $(".registration").offset().top }, 1500);
         return false;
     });
-    $("#rolunk").click(function () {
+    $("#rolunk").click(function() {
         $('html, body').animate({ scrollTop: $(".tartalom-app").offset().top }, 1500);
         return false;
     });
-    $("#eletmod").click(function () {
+    $("#eletmod").click(function() {
         $('html, body').animate({ scrollTop: $(".kiegeszito").offset().top }, 1500);
         return false;
     });
-    $("#kezdolap").click(function () {
+    $("#kezdolap").click(function() {
         $('html, body').animate({ scrollTop: 0 }, 1500);
         return false;
     });
@@ -254,15 +389,89 @@ $(document).ready(function () {
             url: "../php/getgyakorlatok.php",
             method: "POST",
             data: { izomcsid: izomcsid, page: page },
-            success: function (data) {
+            success: function(data) {
                 $(".gyakorlat-leiras").html(data);
             }
         });
     }
-    $(document).on('change', '.izom', function () {
+    $(document).on('change', '.izom', function() {
         load_gyakorlatok();
     });
-    /* ------------------------------- Gyakorlatok -------------------------------*/
+    $(".saveUjGyakorlat").click(function() {
+        let gynev = $("[name=gynev]").val();
+        let leiras = $("[name=leiras]").val();
+        let izom = $("[name=cs]").children(":selected").val();
+        $.ajax({
+            url: "../php/insert_gyakorlat.php",
+            method: "POST",
+            data: { gynev: gynev, leiras: leiras, izom: izom },
+            success: function(data) {
+                if (data == "1") {
+                    $(".uzenet").html("<span class='text-success'>Sikeres módosítás!</span>");
+                    setTimeout(function() {
+                        $("#exampleModalCenter").modal('hide');
+                        $(".uzenet").html("");
+                        $("[name=gynev]").val("");
+                        $("[name=leiras]").val("");
+                        load_gyakorlatok();
+                    }, 500);
+                }
+            }
+        });
+    });
+    $(document).on('click', '#del-gyakorlatok', function() {
+        let gyakorlatid = $(this).attr("data-id");
+        $.ajax({
+            url: "../php/delete_gyakorlat.php",
+            method: "POST",
+            data: { gyakorlatid: gyakorlatid },
+            success: function(data) {
+                if (data == "1") {
+                    location.reload();
+                }
+            }
+        });
+    });
+
+    $(document).on('click', '#update-gyakorlatok', function() {
+        let gyid = $(this).attr("data-id");
+        $.ajax({
+            url: "../php/get_modify_gyakorlat.php",
+            method: "POST",
+            data: { gyid: gyid },
+            dataType: "json",
+            success: function(data) {
+                $("#mgy").val(data.gynev);
+                $("#modify-leiras").html(data.leiras);
+                $("#gyid").val(data.gyakorlatok_id);
+
+
+            }
+        });
+    });
+    $(document).on('click', '.modifyGyakorlat', function(e) {
+            e.preventDefault();
+            let gyid = $("#gyid").val();
+            let gyak = $("#mgy").val();
+            let leiras = $("#modify-leiras").html();
+            $.ajax({
+                url: "../php/update_gyakorlat.php",
+                method: "POST",
+                data: { gyid: gyid, gyak: gyak, leiras: leiras },
+                success: function(response) {
+                    if (response == "1") {
+                        $(".msg").html("<span class='text-success'>Sikeres módosítás!</span>");
+                        setTimeout(function() {
+                            $("#exampleModalCenterUpdateGyakorlat").modal('hide');
+                            $(".msg").html("");
+                            load_gyakorlatok();
+                        }, 500);
+                    }
+                }
+            });
+
+        })
+        /* ------------------------------- Gyakorlatok -------------------------------*/
 
     /* ------------------------------- Edzés -------------------------------*/
     function load_data(page) {
@@ -273,33 +482,33 @@ $(document).ready(function () {
             method: "POST",
             dataType: "text",
             data: { date: date, page: page },
-            success: function (data) {
+            success: function(data) {
                 $(".table").html(data);
             }
         });
 
     }
-    $(document).on('click', '.pagination_link_gyakorlatok', function () {
+    $(document).on('click', '.pagination_link_gyakorlatok', function() {
         let page = $(this).attr("id");
         load_gyakorlatok(page);
     });
-    $(document).on('change', '.date', function () {
+    $(document).on('change', '.date', function() {
         load_data();
     });
 
-    $(document).on('click', '.pagination_link', function () {
+    $(document).on('click', '.pagination_link', function() {
         let page = $(this).attr("id");
         //console.log(page);
         load_data(page);
     });
-    $(document).on('click', '#edzes_trash', function () {
+    $(document).on('click', '#edzes_trash', function() {
         let id = $(this).attr("data-id");
         //console.log(id);
         $.ajax({
             url: '../php/delete_edzes.php',
             method: 'POST',
             data: { id: id },
-            success: function (response) {
+            success: function(response) {
                 if (response == "Data Deleted") {
                     location.reload();
                 }
@@ -308,7 +517,7 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', '.saveUjEdzes', function () {
+    $(document).on('click', '.saveUjEdzes', function() {
         let gyakorlatid = $(".gya").children(":selected").attr("id");
         //console.log(gyakorlatid);
         let sszam = $("[name=sorozatszam]").val();
@@ -325,12 +534,16 @@ $(document).ready(function () {
                     url: "../php/insert_edzesterv.php",
                     method: "POST",
                     data: { gyakorlatid: gyakorlatid, sszam: sszam, isszam: isszam },
-                    success: function (response) {
+                    success: function(response) {
                         if (response == "Done") {
-                            $("#exampleModalCenter").fadeOut(600);
-                            setTimeout(function () {
-                                location.reload();
-                            }, 650);
+                            $("#msg").html("<span class='text-success'>Sikeres Mentés!</span>");
+                            setTimeout(function() {
+                                $("#exampleModalCenter").modal('hide');
+                                $("#msg").html("");
+                                $("[name=sorozatszam]").val("");
+                                $("[name=ismetlesszam]").val("");
+                                load_data();
+                            }, 500);
                         }
                     }
                 });
@@ -339,14 +552,14 @@ $(document).ready(function () {
         }
         //console.log(gynev, sszam, isszam);
     });
-    $(document).on('change', '.ics', function () {
+    $(document).on('change', '.ics', function() {
         let izomid = $(this).children(":selected").attr('id');
         //console.log(izomid);
         $.ajax({
             url: '../php/getgy.php',
             method: 'POST',
             data: { izomid: izomid },
-            success: function (data) {
+            success: function(data) {
                 $(".gy").html(data);
             }
         });

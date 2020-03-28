@@ -213,32 +213,32 @@
             <div class="form-group">
               <label>Teljes név</label>
               <input type="text" class="form-control reg-input" name="name">
-              <div class="name-message"></div>
+              <div class="name-message text-danger"></div>
             </div>
             <div class="form-group">
               <label>E-mail</label>
               <input type="text" class="form-control reg-input" name="email">
-              <div class="email-message"></div>
+              <div class="email-message text-danger"></div>
             </div>
             <div class="form-group">
               <label>Felhasználónév</label>
               <input type="text" class="form-control reg-input" name="fname">
-              <div class="fname-message"></div>
+              <div class="fname-message text-danger"></div>
             </div>
             <div class="form-group">
               <label>Jelszó</label>
               <input type="password" class="form-control reg-input" name="reg-pw">
-              <div class="pw-message"></div>
+              <div class="pw-message text-danger"></div>
             </div>
             <div class="form-group">
               <label>Testsúly</label>
               <input type="text" class="form-control reg-input" name="tsuly">
-              <div class="tsuly-message"></div>
+              <div class="tsuly-message text-danger"></div>
             </div>
             <div class="form-group">
               <label>Testmagasság</label>
               <input type="text" class="form-control reg-input" name="tmagassag">
-              <div class="tmagassag-message"></div>
+              <div class="tmagassag-message text-danger"></div>
             </div>
             <div class="reg-message"></div>
           </form>

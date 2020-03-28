@@ -18,8 +18,8 @@ if (!isset($_SESSION['uid'])) {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../js/main.js"></script>
   <title>Build Your Body - <?php echo $_SESSION["user"]; ?></title>
 </head>
@@ -28,7 +28,7 @@ if (!isset($_SESSION['uid'])) {
 
 
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLongTitle">Új edzés</h3>
@@ -64,13 +64,19 @@ if (!isset($_SESSION['uid'])) {
                     <input type="text" name="ismetlesszam" class="form-control" placeholder="Ismétlésszám">
                   </div>
                   <div id="message"></div>
+
                 </div>
               </div>
             </div>
           </form>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <button type="submit" class="btn saveUjEdzes btn-primary btn-lg">Mentés</button>
+          <div class="row justify-content-center">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <button type="submit" class="form-control saveUjEdzes">Mentés</button>
+              </div>
+              <div id="msg" class="text-center"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -110,28 +116,34 @@ if (!isset($_SESSION['uid'])) {
                       <div class="form-group">
                         <label>Teljes név</label>
                         <input type="text" id="input-teljesnev" readonly value="<?php echo $row["teljesnev"]; ?>" class="form-control">
+                        <div class="name-text text-danger"></div>
                       </div>
                       <div class="form-group">
                         <label>E-mail</label>
                         <input type="text" id="input-email" readonly value="<?php echo $row["email"]; ?>" class="form-control">
+                        <div class="email-text text-danger"></div>
                       </div>
                       <div class="form-group">
                         <label>Felhasználónév</label>
                         <input type="text" id="input-fname" readonly value="<?php echo $row["fname"]; ?>" class="form-control">
+                        <div class="fname-text text-danger"></div>
                       </div>
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-12">
                       <div class="form-group">
                         <label>Jelszó</label>
                         <input type="password" id="input-pw" readonly value="<?php echo $row["jelszo"]; ?>" class="form-control">
+                        <div class="pw-text text-danger"></div>
                       </div>
                       <div class="form-group">
                         <label>Testsúly</label>
                         <input type="text" id="input-tsuly" readonly value="<?php echo $row["tsuly"]; ?>" class="form-control">
+                        <div class="tsuly-text text-danger"></div>
                       </div>
                       <div class="form-group">
                         <label>Testmagasság</label>
                         <input type="text" id="input-tmagassag" readonly value="<?php echo $row["tmagassag"]; ?>" class="form-control">
+                        <div class="tmagassag-text text-danger"></div>
                       </div>
                     </div>
 

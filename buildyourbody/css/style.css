@@ -1,150 +1,184 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-html, body{
+
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
+
+
 /* Navbar */
-.navbar{
+
+.navbar {
     text-transform: uppercase;
     font-weight: 700;
     font-size: .9rem;
     letter-spacing: .1rem;
-    background: rgba(0,0,0,.6)!important;
+    background: rgba(0, 0, 0, .6)!important;
 }
-.navbar-nav li{
+
+.navbar-nav li {
     padding-right: .7rem;
 }
-.navbar-dark .navbar-nav .nav-link{
+
+.navbar-dark .navbar-nav .nav-link {
     color: white;
     padding-top: .8rem;
     transition: .3s ease-in-out;
 }
+
 .navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link:hover{
+.navbar-dark .navbar-nav .nav-link:hover {
     color: #00A6FF !important;
-    
 }
-.navbar-brand img{
+
+.navbar-brand img {
     height: 2rem;
     padding-right: .4rem;
 }
-.carousel-item{
+
+.carousel-item {
     height: 100vh;
-    
 }
-.carousel-caption{
+
+.carousel-caption {
     padding-bottom: 25% !important;
 }
-.carousel-caption h1, .carousel-caption h2{
+
+.carousel-caption h1,
+.carousel-caption h2 {
     font-size: 50px;
     color: #00A6FF;
 }
-.carousel-caption h6, .carousel-caption h5{
+
+.carousel-caption h6,
+.carousel-caption h5 {
     font-size: 25px;
 }
-.tartalom-app{
+
+.tartalom-app {
     background-color: whitesmoke;
     padding-top: 5rem;
 }
-#tartalom-text{
+
+#tartalom-text {
     text-align: justify;
 }
-.section-heading{
+
+.section-heading {
     padding-bottom: 5rem;
 }
-.section-heading h2{
+
+.section-heading h2 {
     font-size: 36px;
     font-weight: 600;
 }
-.section-heading h6{
+
+.section-heading h6 {
     text-transform: uppercase;
     color: #00A6FF;
 }
-.man img{
+
+.man img {
     position: relative;
     bottom: 10rem;
     right: 3rem;
 }
+
 @media screen and (max-width: 992px) {
-    .man img{
+    .man img {
         bottom: 0;
         height: 50%;
         width: 50%;
     }
-    .navbar-nav.ml-auto{
+    .navbar-nav.ml-auto {
         text-align: center;
     }
-    .single-offer{
+    .single-offer {
         margin-bottom: 30px;
     }
-    .bmi
-    .form-control{
+    .bmi .form-control {
         margin: 10px;
     }
 }
-.reg{
+
+.reg {
     padding-top: 2.5em;
 }
-.page-footer{
-    background: rgba(0, 0, 0, 1) ;
+
+.page-footer {
+    background: rgba(0, 0, 0, 1);
 }
-.btn.btn-social-icon{
+
+.btn.btn-social-icon {
     width: 35px;
     height: 35px;
     padding: 0;
 }
-.btn-facebook{
+
+.btn-facebook {
     background: #3b579d;
     color: #fff;
 }
+
 .btn-facebook:hover,
 .btn-facebook:focus {
     background: #2d4278;
     color: #ffffff
 }
+
 .btn-instagram:hover,
 .btn-instagram:focus {
     background: #bf3322;
     color: #ffffff
 }
+
 .btn-github:hover,
-.btn-github:focus{
+.btn-github:focus {
     background: #707070;
     color: #ffffff;
 }
-.btn-instagram{
+
+.btn-instagram {
     background: #dc4a38;
     color: #ffffff
 }
-.btn-github{
-    background: #808080;;
+
+.btn-github {
+    background: #808080;
+    ;
     color: #ffffff;
 }
-.single-offer{
+
+.single-offer {
     padding: 40px 30px 30px 30px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 20px 60px 0px rgba(0, 0, 0, 0.7);
     text-align: center;
 }
-.single-offer h4{
+
+.single-offer h4 {
     padding: 30px 0 20px 0;
 }
-.pb-70{
+
+.pb-70 {
     padding-bottom: 70px;
 }
-.kiegeszito{
+
+.kiegeszito {
     padding: 120px 0;
 }
-.kiegeszito h1{
+
+.kiegeszito h1 {
     font-weight: 500;
 }
-.join{
+
+.join {
     background-image: url("../img/photo.jpg");
     text-align: center;
     padding-top: 110px;
@@ -153,13 +187,15 @@ html, body{
     background-position: top center;
     background-attachment: fixed;
 }
-.join h1{
+
+.join h1 {
     color: #ffffff;
     font-weight: 500;
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
-.registration{
+
+.registration {
     background: url("../img/photo1.jpg");
     background-position: center;
     background-size: cover;
@@ -167,36 +203,41 @@ html, body{
     padding-top: 80px;
     padding-bottom: 120px;
 }
-.registration h1{
+
+.registration h1 {
     font-weight: 500;
     letter-spacing: 2px;
     padding-top: 50%;
 }
-.registration .btn-reg{
+
+.registration .btn-reg {
     padding: 10px;
     font-size: 22px;
     background: #0057BA;
     color: white;
     transition: .3s all ease-in-out;
     border: none;
-    
 }
-.regform{
+
+.regform {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
 }
-.registration .btn-reg:hover{
+
+.registration .btn-reg:hover {
     letter-spacing: 1px;
     background: #00A6FF;
     cursor: grab;
 }
-.reg-input{
+
+.reg-input {
     background: transparent !important;
     color: white !important;
     border: none !important;
     border-bottom: 2px solid #0057BA !important;
 }
-.scrolltop{
+
+.scrolltop {
     position: fixed;
     bottom: 30px;
     right: 15px;
@@ -208,15 +249,18 @@ html, body{
     font-size: 25px;
     border-radius: 50px;
     transition: 0.3s;
-  }
-  .arrow{
-      color: white;
-  }
-  .arrow:hover{
-      font-weight: bold;
-  }
-  
-  input[type="text"], input[type="password"] {
+}
+
+.arrow {
+    color: white;
+}
+
+.arrow:hover {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
     width: 100%;
     border: 1px solid #aaa;
     border-radius: 4px;
@@ -225,57 +269,61 @@ html, body{
     padding: 8px;
     box-sizing: border-box;
     transition: 0.3s;
-  }
-  
-  input[type="text"]:focus, input[type="password"]:focus {
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
     border-color: #00A6FF;
     box-shadow: 0 0 8px 0 #00A6FF;
-  }
-  
-  .inputWithIcon input[type="text"], .inputWithIcon input[type="password"] {
+}
+
+.inputWithIcon input[type="text"],
+.inputWithIcon input[type="password"] {
     padding-left: 40px;
-  }
-  
-  .inputWithIcon {
+}
+
+.inputWithIcon {
     position: relative;
-  }
-  
-  .inputWithIcon i {
+}
+
+.inputWithIcon i {
     position: absolute;
     left: 0;
     top: 6px;
     padding: 9px 8px;
     color: #aaa;
     transition: 0.3s;
-  }
-  
-  .inputWithIcon input[type="text"]:focus + i, .inputWithIcon input[type="password"]:focus + i {
+}
+
+.inputWithIcon input[type="text"]:focus+i,
+.inputWithIcon input[type="password"]:focus+i {
     color: #00A6FF;
-  }
-  
-  .inputWithIcon.inputIconBg i {
+}
+
+.inputWithIcon.inputIconBg i {
     background-color: #aaa;
     color: #fff;
     padding: 9px 4px;
     border-radius: 4px 0 0 4px;
-  }
-  
-  .inputWithIcon.inputIconBg input[type="text"]:focus + i, .inputWithIcon.inputIconBg input[type="password"]:focus + i {
+}
+
+.inputWithIcon.inputIconBg input[type="text"]:focus+i,
+.inputWithIcon.inputIconBg input[type="password"]:focus+i {
     color: #fff;
     background-color: #00A6FF;
-  }
-  .login-form img{
-      width: 40%;
-      position: relative;
-      left: 4.5rem;
-  }
-  .name-message,
-  .email-message,
-  .fname-message,
-  .pw-message,
-  .tsuly-message,
-  .tmagassag-message{
-      color: #0057BA;
-      font-weight: 700;
-  }
- 
+}
+
+.login-form img {
+    width: 40%;
+    position: relative;
+    left: 4.5rem;
+}
+
+.name-message,
+.email-message,
+.fname-message,
+.pw-message,
+.tsuly-message,
+.tmagassag-message {
+    font-weight: 700;
+}

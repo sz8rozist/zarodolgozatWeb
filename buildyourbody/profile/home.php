@@ -58,28 +58,34 @@ if (!isset($_SESSION['uid'])) {
                       <div class="form-group">
                         <label>Teljes név</label>
                         <input type="text" id="input-teljesnev" readonly value="<?php echo $row["teljesnev"]; ?>" class="form-control">
+                        <div class="name-text text-danger"></div>
                       </div>
                       <div class="form-group">
                         <label>E-mail</label>
                         <input type="text" id="input-email" readonly value="<?php echo $row["email"]; ?>" class="form-control">
+                        <div class="email-text text-danger"></div>
                       </div>
                       <div class="form-group">
                         <label>Felhasználónév</label>
                         <input type="text" id="input-fname" readonly value="<?php echo $row["fname"]; ?>" class="form-control">
+                        <div class="fname-text text-danger"></div>
                       </div>
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-12">
                       <div class="form-group">
                         <label>Jelszó</label>
                         <input type="password" id="input-pw" readonly value="<?php echo $row["jelszo"]; ?>" class="form-control">
+                        <div class="pw-text text-danger"></div>
                       </div>
                       <div class="form-group">
                         <label>Testsúly</label>
                         <input type="text" id="input-tsuly" readonly value="<?php echo $row["tsuly"]; ?>" class="form-control">
+                        <div class="tsuly-text text-danger"></div>
                       </div>
                       <div class="form-group">
                         <label>Testmagasság</label>
                         <input type="text" id="input-tmagassag" readonly value="<?php echo $row["tmagassag"]; ?>" class="form-control">
+                        <div class="tmagassag-text text-danger"></div>
                       </div>
                     </div>
 
